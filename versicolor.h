@@ -1,0 +1,14 @@
+//
+// Created by liran on 19/07/2022.
+//
+
+#ifndef ADVANCED_PROGRAMMING_1_VERSICOLOR_H
+#define ADVANCED_PROGRAMMING_1_VERSICOLOR_H
+
+
+class versicolor {
+
+};
+
+
+#endif //ADVANCED_PROGRAMMING_1_VERSICOLOR_H
