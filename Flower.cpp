@@ -4,7 +4,7 @@
 
 #include "Flower.hpp"
 
-const std::string Flower::getFlowerType() const{
+const int Flower::getFlowerType() const{
     return m_flowerType;
 }
 

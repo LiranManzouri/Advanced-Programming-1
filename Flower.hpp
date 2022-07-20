@@ -5,13 +5,13 @@
 #include <string>
 
 class Flower {
-    const std::string m_flowerType;
+    const int m_flowerType;
     const double m_calyxLeavesLength;
     const double m_calyxLeavesWidth;
     const double m_petalLength;
     const double m_petalWidth;
 public:
-    const std::string getFlowerType() const;
+    const int getFlowerType() const;
 
     const double getCalyxLeavesLength() const;
 
