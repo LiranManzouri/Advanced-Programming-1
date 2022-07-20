@@ -11,13 +11,13 @@ class Flower {
     const double m_petalLength;
     const double m_petalWidth;
 public:
-    std::string getFlowerType();
+    const std::string getFlowerType() const;
 
-    double getCalyxLeavesLength();
+    const double getCalyxLeavesLength() const;
 
-    double getCalyxLeavesWidth();
+    const double getCalyxLeavesWidth() const;
 
-    double getPetalLength();
+    const double getPetalLength() const;
 
-    double getPetalWidth();
+    const double getPetalWidth() const;
 };

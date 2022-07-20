@@ -4,22 +4,22 @@
 
 #include "Flower.hpp"
 
-std::string Flower::getFlowerType() {
+const std::string Flower::getFlowerType() const{
     return m_flowerType;
 }
 
-double Flower::getPetalLength() {
+const double Flower::getPetalLength() const {
     return m_petalLength;
 }
 
-double Flower::getPetalWidth() {
+const double Flower::getPetalWidth() const {
     return m_petalWidth;
 }
 
-double Flower::getCalyxLeavesLength() {
+const double Flower::getCalyxLeavesLength() const {
     return m_calyxLeavesLength;
 }
 
-double Flower::getCalyxLeavesWidth() {
+const double Flower::getCalyxLeavesWidth() const {
     return m_calyxLeavesWidth;
 }
