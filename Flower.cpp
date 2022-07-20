@@ -2,9 +2,9 @@
 // Created by liran on 19/07/2022.
 //
 
-#include "Flower.h"
+#include "Flower.hpp"
 
-String Flower::getFlowerType() {
+std::string Flower::getFlowerType() {
     return m_flowerType;
 }
 
