@@ -4,7 +4,7 @@
 
 #include "Flower.hpp"
 
-const int Flower::getFlowerType() const{
+const string Flower::getFlowerType() const{
     return m_flowerType;
 }
 
@@ -22,4 +22,9 @@ const double Flower::getCalyxLeavesLength() const {
 
 const double Flower::getCalyxLeavesWidth() const {
     return m_calyxLeavesWidth;
+}
+
+ostream &operator<<(ostream &os, const Flower &flower) {
+    return os << flower.getFlowerType() << " " << flower.getCalyxLeavesLength() << " "
+              << flower.getCalyxLeavesWidth() << " " << flower.getPetalLength() << " " << flower.getPetalWidth();
 }
