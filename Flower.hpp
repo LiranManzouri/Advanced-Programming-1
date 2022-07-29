@@ -23,10 +23,12 @@ public:
     Flower() : m_calyxLeavesLength(0), m_calyxLeavesWidth(0),
                m_petalLength(0), m_petalWidth(0), m_flowerType("") {}
 
-    Flower(const Flower &flower) : m_calyxLeavesLength(flower.m_calyxLeavesLength),
+    Flower(const Flower &flower) = default;/*: m_calyxLeavesLength(flower.m_calyxLeavesLength),
                                    m_calyxLeavesWidth(flower.m_calyxLeavesWidth),
                                    m_petalLength(flower.m_petalLength), m_petalWidth(flower.m_petalWidth),
-                                   m_flowerType(flower.m_flowerType) {}
+                                   m_flowerType(flower.m_flowerType) {}*/
+
+    ~Flower() = default;
 
     const string getFlowerType() const;
 

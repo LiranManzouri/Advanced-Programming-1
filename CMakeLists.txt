@@ -12,6 +12,6 @@ add_executable(Advanced_Programming_1
         Flower.hpp
         KNN.cpp
         KNN.hpp
-        ReadClassified.hpp
-        ReadClassified.cpp
+        ReadFlowers.hpp
+        ReadFlowers.cpp
         )
