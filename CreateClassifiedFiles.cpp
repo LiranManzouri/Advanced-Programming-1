@@ -47,8 +47,3 @@ void CreateClassifiedFiles::createClassified() const {
     classifyByManhattanFile.close();
 
 }
-
-int main(int argc, char *argv[]) {
-    CreateClassifiedFiles createClassifiedFiles = CreateClassifiedFiles(stoi(argv[1]));
-    createClassifiedFiles.createClassified();
-}

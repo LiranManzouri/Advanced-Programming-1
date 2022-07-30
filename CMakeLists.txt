@@ -18,4 +18,6 @@ add_executable(Advanced_Programming_1
         ClassifyFlower.h
         CreateClassifiedFiles.cpp
         CreateClassifiedFiles.h
+        Main.cpp
+        Main.h
         )
