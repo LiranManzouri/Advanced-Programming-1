@@ -34,9 +34,6 @@ pair<Flower *, double> *ClassifyFlower::getManhattanDistances() const {
 
 string ClassifyFlower::euclideanClassify() {
     pair<Flower *, double> *euclideanDistances = getEuclideanDistances();
-    for (int i = 0; i < numOfFlowers; i++) {
-        cout << *euclideanDistances[i].first << " and the distance is: " << euclideanDistances[i].second << endl;
-    }
     KNN::QuickSelect(k, euclideanDistances, 0, numOfFlowers - 1);
     return classifyByKNN(euclideanDistances);
 

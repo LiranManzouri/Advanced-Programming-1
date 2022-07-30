@@ -16,4 +16,6 @@ add_executable(Advanced_Programming_1
         ReadFlowers.h
         ClassifyFlower.cpp
         ClassifyFlower.h
+        CreateClassifiedFiles.cpp
+        CreateClassifiedFiles.h
         )
