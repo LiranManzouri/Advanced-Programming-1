@@ -1,4 +1,7 @@
-#include "Flower.hpp"
+#ifndef ADVANCED_PROGRAMMING_1_READFLOWERS_H
+#define ADVANCED_PROGRAMMING_1_READFLOWERS_H
+
+#include "Flower.h"
 #include <iostream>
 #include <utility>
 
@@ -10,7 +13,8 @@ class ReadFlowers {
     Flower *flowers;
 
 public:
-    ReadFlowers(string fileName) : fileName(move(fileName)) {
+
+    explicit ReadFlowers(string fileName) : fileName(move(fileName)) {
         flowers = nullptr;
     }
 
@@ -18,7 +22,15 @@ public:
         delete[] flowers;
     }
 
+
+    Flower *getFlowers() {
+        return flowers;
+    }
+
     int getNumOfFlowers();
 
     void readAndSaveFlowers();
 };
+
+
+#endif //ADVANCED_PROGRAMMING_1_READFLOWERS_H

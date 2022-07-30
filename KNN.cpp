@@ -1,13 +1,13 @@
-#include <KNN.hpp>
+#include <KNN.h>
 
 using namespace std;
 
-int KNN::partition(pair<double, int> *arr, int left, int right, int pivot) {
-    int x = arr[pivot].first;
+int KNN::partition(pair<Flower *, double> *arr, int left, int right, int pivot) {
+    double x = arr[pivot].second;
     swap(arr[pivot], arr[right]);
     int i = left;
     for (int j = left; j < right; j++) {
-        if (arr[j].first <= x) {
+        if (arr[j].second <= x) {
             swap(arr[j], arr[i]);
             i++;
         }
@@ -16,29 +16,22 @@ int KNN::partition(pair<double, int> *arr, int left, int right, int pivot) {
     return i;
 }
 
-void KNN::QuickSelect(int k, pair<double, int> *arr, int left, int right) {
+pair<Flower *, double> KNN::QuickSelect(int k, pair<Flower *, double> *arr, int left, int right) {
+
+    cout << "here4" << endl;
+
     if (left == right) {
-        return;
+        return arr[left];
     }
 
-    int pivotindex = partition(arr, left, right, (right - left) / 2);
+    int pivotIndex = left + (right - left) / 2;
+    pivotIndex = partition(arr, left, right, pivotIndex);
 
-    if (pivotindex == k) {
-        return;
+    if (pivotIndex == k) {
+        return arr[k];
     }
-    if (pivotindex < k) {
-        QuickSelect(k, arr, left, pivotindex - 1);
-        return;
+    if (k < pivotIndex) {
+        return QuickSelect(k, arr, left, pivotIndex - 1);
     }
-    if (pivotindex > k) {
-        QuickSelect(k, arr, pivotindex + 1, right);
-        return;
-    }
+    return QuickSelect(k, arr, pivotIndex + 1, right);
 }
-
-/*
-int main() {
-    int arr[] = {1, 2, 4, 6, -3, -6, 56, 12, 3};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int k = 3;
-}*/

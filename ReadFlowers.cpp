@@ -2,30 +2,31 @@
 // Created by liran on 28/07/2022.
 //
 
-#include "ReadFlowers.hpp"
+#include "ReadFlowers.h"
+#include "ClassifyFlower.h"
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
 void ReadFlowers::readAndSaveFlowers() {
-    ifstream classifiedFile;
     int numOfFlowers = getNumOfFlowers();
-    flowers = new Flower[numOfFlowers] /*= new Flower[numOfFlowers]*/;
-    classifiedFile.open(fileName);
-    if (!classifiedFile) {
+    flowers = new Flower[numOfFlowers];
+
+    ifstream flowersInputFile;
+    flowersInputFile.open(fileName);
+    if (!flowersInputFile) {
         cout << "No such file!" << endl;
         return;
     }
     string line;
     const char delim = ',';
     int index = 0;
-    while (!classifiedFile.eof()) {
-        getline(classifiedFile, line);
+    while (!flowersInputFile.eof()) {
+        getline(flowersInputFile, line);
         if (line.empty()) {
             continue;
         }
-        cout << line << endl;
         string token1 = line.substr(0, line.find(delim));
         line.erase(0, line.find(delim) + 1);
         string token2 = line.substr(0, line.find(delim));
@@ -34,14 +35,11 @@ void ReadFlowers::readAndSaveFlowers() {
         line.erase(0, line.find(delim) + 1);
         string token4 = line.substr(0, line.find(delim));
         string flowerType;
-        if (line.find(delim) == string::npos) {
-//            flowerType = nullptr;
-        } else {
+        if (line.find(delim) != string::npos) {
             line.erase(0, line.find(delim) + 1);
-            flowerType = line/*.substr(0, line.find(delim))*/;
+            flowerType = line;
             line.erase();
         }
-        cout << "hola" << endl;
         double calyxLeavesLength = stod(token1);
         double calyxLeavesWidth = stod(token2);
         double petalLength = stod(token3);
@@ -50,12 +48,6 @@ void ReadFlowers::readAndSaveFlowers() {
         flowers[index] = flower;
         index++;
     }
-
-
-    for (int i = 0; i < numOfFlowers; i++) {
-        cout << flowers[i] << endl;
-    }
-    cout << "hello" << endl;
 }
 
 int ReadFlowers::getNumOfFlowers() {
@@ -75,11 +67,31 @@ int ReadFlowers::getNumOfFlowers() {
 
 
 int main() {
-    string fileName = "../classified.csv";
-    string fileName2 = "../Unclassified.csv";
-    ReadFlowers reader = ReadFlowers(fileName);
-    ReadFlowers reader2 = ReadFlowers(fileName2);
-    reader.readAndSaveFlowers();
-    reader2.readAndSaveFlowers();
+    string classifiedFlowersFileName = "../classified.csv";
+    string unclassifiedFlowersFileName = "../Unclassified.csv";
+
+    ReadFlowers classifiedReader = ReadFlowers(classifiedFlowersFileName);
+    ReadFlowers unclassifiedReader = ReadFlowers(unclassifiedFlowersFileName);
+
+    classifiedReader.readAndSaveFlowers();
+    unclassifiedReader.readAndSaveFlowers();
+
+    int numOfClassifiedFlowers = classifiedReader.getNumOfFlowers();
+    Flower *classifiedFlowers = classifiedReader.getFlowers();
+    for (int i = 0; i < numOfClassifiedFlowers; i++) {
+        cout << classifiedFlowers[i] << endl;
+    }
+
+    int numOfUnclassifiedFlowers = unclassifiedReader.getNumOfFlowers();
+    Flower *unclassifiedFlowers = unclassifiedReader.getFlowers();
+    for (int i = 0; i < numOfUnclassifiedFlowers; i++) {
+        cout << unclassifiedFlowers[i] << endl;
+    }
+
+    ClassifyFlower clf = ClassifyFlower(unclassifiedFlowers[0], classifiedFlowers, numOfClassifiedFlowers, 5);
+
+    clf.euclideanClassify();
+
+
     return 0;
 }

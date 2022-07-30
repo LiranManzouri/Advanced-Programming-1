@@ -7,11 +7,13 @@ include_directories(.)
 
 add_executable(Advanced_Programming_1
         DistanceCalculator.cpp
-        DistanceCalculator.hpp
+        DistanceCalculator.h
         Flower.cpp
-        Flower.hpp
+        Flower.h
         KNN.cpp
-        KNN.hpp
-        ReadFlowers.hpp
+        KNN.h
         ReadFlowers.cpp
+        ReadFlowers.h
+        ClassifyFlower.cpp
+        ClassifyFlower.h
         )
