@@ -2,8 +2,6 @@
 #define ADVANCED_PROGRAMMING_1_DISTANCECALCULATOR_H
 
 #include "Flower.h"
-#include <cmath>
-
 
 class DistanceCalculator {
 

@@ -5,23 +5,18 @@
 #ifndef ADVANCED_PROGRAMMING_1_FLOWER_H
 #define ADVANCED_PROGRAMMING_1_FLOWER_H
 
+
 #include <string>
-#include <utility>
-#include <iostream>
-
-
-using namespace std;
-
 
 class Flower {
-    string m_flowerType;
+    std::string m_flowerType;
     double m_calyxLeavesLength;
     double m_calyxLeavesWidth;
     double m_petalLength;
     double m_petalWidth;
 public:
 
-    Flower(string flowerType, double calyxLeavesLength, double calyxLeavesWidth, double petalLength,
+    Flower(std::string flowerType, double calyxLeavesLength, double calyxLeavesWidth, double petalLength,
            double petalWidth) : m_calyxLeavesLength(calyxLeavesLength), m_calyxLeavesWidth(calyxLeavesWidth),
                                 m_petalLength(petalLength), m_petalWidth(petalWidth), m_flowerType(move(flowerType)) {}
 
@@ -32,7 +27,7 @@ public:
 
     ~Flower() = default;
 
-    string getFlowerType() const;
+    std::string getFlowerType() const;
 
     double getCalyxLeavesLength() const;
 
@@ -55,6 +50,6 @@ public:
     }
 };
 
-ostream &operator<<(ostream &os, const Flower &flower);
+std::ostream &operator<<(std::ostream &os, const Flower &flower);
 
 #endif //ADVANCED_PROGRAMMING_1_FLOWER_H

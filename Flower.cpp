@@ -3,6 +3,9 @@
 //
 
 #include "Flower.h"
+#include "iostream"
+
+using namespace std;
 
 string Flower::getFlowerType() const {
     return m_flowerType;

@@ -5,22 +5,23 @@
 #include "CreateClassifiedFiles.h"
 #include "ReadFlowers.h"
 #include "ClassifyFlower.h"
-#include <iostream>
 #include <fstream>
+
+using namespace std;
 
 void CreateClassifiedFiles::createClassified() const {
 
     ofstream classifyByEuclideanFile;
-    classifyByEuclideanFile.open("../euclidean_output.csv");
+    classifyByEuclideanFile.open("euclidean_output.csv");
 
     ofstream classifyByChebyshevFile;
-    classifyByChebyshevFile.open("../chebyshev_output.csv");
+    classifyByChebyshevFile.open("chebyshev_output.csv");
 
     ofstream classifyByManhattanFile;
-    classifyByManhattanFile.open("../manhattan_output.csv");
+    classifyByManhattanFile.open("manhattan_output.csv");
 
-    ReadFlowers classifiedReader = ReadFlowers("../classified.csv");
-    ReadFlowers unclassifiedReader = ReadFlowers("../Unclassified.csv");
+    ReadFlowers classifiedReader = ReadFlowers("classified.csv");
+    ReadFlowers unclassifiedReader = ReadFlowers("Unclassified.csv");
 
     classifiedReader.readAndSaveFlowers();
     unclassifiedReader.readAndSaveFlowers();

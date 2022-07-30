@@ -4,6 +4,9 @@
 
 #include "ClassifyFlower.h"
 #include "DistanceCalculator.h"
+#include "KNN.h"
+
+using namespace std;
 
 pair<Flower *, double> *ClassifyFlower::getEuclideanDistances() const {
     auto *euclideanDistances = new pair<Flower *, double>[numOfFlowers];

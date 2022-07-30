@@ -5,11 +5,6 @@
 #ifndef ADVANCED_PROGRAMMING_1_CREATECLASSIFIEDFILES_H
 #define ADVANCED_PROGRAMMING_1_CREATECLASSIFIEDFILES_H
 
-#include <string>
-#include <utility>
-
-using namespace std;
-
 class CreateClassifiedFiles {
 
     const int k;

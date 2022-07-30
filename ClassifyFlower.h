@@ -6,8 +6,6 @@
 #define ADVANCED_PROGRAMMING_1_CLASSIFYFLOWER_H
 
 #include "Flower.h"
-#include "KNN.h"
-#include "map"
 
 class ClassifyFlower {
 
@@ -16,24 +14,24 @@ class ClassifyFlower {
     const int k;
     Flower *flowers;
 
-    pair<Flower *, double> *getEuclideanDistances() const;
+    std::pair<Flower *, double> *getEuclideanDistances() const;
 
-    pair<Flower *, double> *getChebyshevDistances() const;
+    std::pair<Flower *, double> *getChebyshevDistances() const;
 
-    pair<Flower *, double> *getManhattanDistances() const;
+    std::pair<Flower *, double> *getManhattanDistances() const;
 
-    string classifyByKNN(pair<Flower*, double> *distances) const;
+    std::string classifyByKNN(std::pair<Flower*, double> *distances) const;
 
 public:
 
     ClassifyFlower(const Flower &unclassifiedFlower, Flower *flowers, int numOfFlowers, int k) :
             unclassifiedFlower(unclassifiedFlower), flowers(flowers), numOfFlowers(numOfFlowers), k(k) {}
 
-    string euclideanClassify();
+    std::string euclideanClassify();
 
-    string chebyshevClassify();
+    std::string chebyshevClassify();
 
-    string manhattanClassify();
+    std::string manhattanClassify();
 };
 
 

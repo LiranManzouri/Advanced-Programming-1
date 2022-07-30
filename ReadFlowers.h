@@ -2,19 +2,15 @@
 #define ADVANCED_PROGRAMMING_1_READFLOWERS_H
 
 #include "Flower.h"
-#include <iostream>
-#include <utility>
-
-using namespace std;
 
 class ReadFlowers {
 
-    const string fileName;
+    const std::string fileName;
     Flower *flowers;
 
 public:
 
-    explicit ReadFlowers(string fileName) : fileName(move(fileName)) {
+    explicit ReadFlowers(std::string fileName) : fileName(move(fileName)) {
         flowers = nullptr;
     }
 
