@@ -66,6 +66,7 @@ int ReadFlowers::getNumOfFlowers() {
 }
 
 
+/*
 int main() {
     string classifiedFlowersFileName = "../classified.csv";
     string unclassifiedFlowersFileName = "../Unclassified.csv";
@@ -95,3 +96,4 @@ int main() {
 
     return 0;
 }
+*/
