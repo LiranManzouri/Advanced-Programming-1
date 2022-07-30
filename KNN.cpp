@@ -16,19 +16,19 @@ int KNN::partition(pair<Flower *, double> *arr, int left, int right, int pivot) 
     return i;
 }
 
-pair<Flower *, double> KNN::QuickSelect(int k, pair<Flower *, double> *arr, int left, int right) {
+void KNN::QuickSelect(int k, pair<Flower *, double> *arr, int left, int right) {
 
     cout << "here4" << endl;
 
     if (left == right) {
-        return arr[left];
+        return;
     }
 
     int pivotIndex = left + (right - left) / 2;
     pivotIndex = partition(arr, left, right, pivotIndex);
 
     if (pivotIndex == k) {
-        return arr[k];
+        return;
     }
     if (k < pivotIndex) {
         return QuickSelect(k, arr, left, pivotIndex - 1);

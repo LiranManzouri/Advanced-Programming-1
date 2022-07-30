@@ -6,7 +6,7 @@
 class KNN {
     static int partition(std::pair<Flower *, double> *arr, int left, int right, int pivot);
 public:
-    static pair<Flower*, double> QuickSelect(int k, std::pair<Flower *, double> *arr, int left, int right);
+    static void QuickSelect(int k, std::pair<Flower *, double> *arr, int left, int right);
 };
 
 
