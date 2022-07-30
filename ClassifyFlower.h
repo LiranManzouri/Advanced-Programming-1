@@ -6,8 +6,8 @@
 #define ADVANCED_PROGRAMMING_1_CLASSIFYFLOWER_H
 
 #include "Flower.h"
-#include "map"
 #include "KNN.h"
+#include "map"
 
 class ClassifyFlower {
 

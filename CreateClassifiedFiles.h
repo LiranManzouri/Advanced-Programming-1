@@ -16,7 +16,7 @@ class CreateClassifiedFiles {
 
 public:
 
-    CreateClassifiedFiles(int k) : k(k) {}
+    explicit CreateClassifiedFiles(int k) : k(k) {}
 
     void createClassified() const;
 

@@ -3,7 +3,6 @@
 //
 
 #include "ReadFlowers.h"
-#include "ClassifyFlower.h"
 #include <iostream>
 #include <fstream>
 
@@ -12,7 +11,6 @@ using namespace std;
 void ReadFlowers::readAndSaveFlowers() {
     int numOfFlowers = getNumOfFlowers();
     flowers = new Flower[numOfFlowers];
-
     ifstream flowersInputFile;
     flowersInputFile.open(fileName);
     if (!flowersInputFile) {
@@ -52,11 +50,11 @@ void ReadFlowers::readAndSaveFlowers() {
 
 int ReadFlowers::getNumOfFlowers() {
     int numOfFlowers = 0;
-    ifstream classifiedFile;
-    classifiedFile.open(fileName);
+    ifstream inputFile;
+    inputFile.open(fileName);
     string line;
-    while (!classifiedFile.eof()) {
-        getline(classifiedFile, line);
+    while (!inputFile.eof()) {
+        getline(inputFile, line);
         if (line.empty()) {
             continue;
         }
@@ -64,36 +62,3 @@ int ReadFlowers::getNumOfFlowers() {
     }
     return numOfFlowers;
 }
-
-
-/*
-int main() {
-    string classifiedFlowersFileName = "../classified.csv";
-    string unclassifiedFlowersFileName = "../Unclassified.csv";
-
-    ReadFlowers classifiedReader = ReadFlowers(classifiedFlowersFileName);
-    ReadFlowers unclassifiedReader = ReadFlowers(unclassifiedFlowersFileName);
-
-    classifiedReader.readAndSaveFlowers();
-    unclassifiedReader.readAndSaveFlowers();
-
-    int numOfClassifiedFlowers = classifiedReader.getNumOfFlowers();
-    Flower *classifiedFlowers = classifiedReader.getFlowers();
-    for (int i = 0; i < numOfClassifiedFlowers; i++) {
-        cout << classifiedFlowers[i] << endl;
-    }
-
-    int numOfUnclassifiedFlowers = unclassifiedReader.getNumOfFlowers();
-    Flower *unclassifiedFlowers = unclassifiedReader.getFlowers();
-    for (int i = 0; i < numOfUnclassifiedFlowers; i++) {
-        cout << unclassifiedFlowers[i] << endl;
-    }
-
-    ClassifyFlower clf = ClassifyFlower(unclassifiedFlowers[0], classifiedFlowers, numOfClassifiedFlowers, 5);
-
-    clf.euclideanClassify();
-
-
-    return 0;
-}
-*/

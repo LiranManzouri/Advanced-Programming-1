@@ -20,7 +20,7 @@ void CreateClassifiedFiles::createClassified() const {
     classifyByManhattanFile.open("../manhattan_output.csv");
 
     ReadFlowers classifiedReader = ReadFlowers("../classified.csv");
-    ReadFlowers unclassifiedReader = ReadFlowers("../unclassified.csv");
+    ReadFlowers unclassifiedReader = ReadFlowers("../Unclassified.csv");
 
     classifiedReader.readAndSaveFlowers();
     unclassifiedReader.readAndSaveFlowers();
@@ -48,11 +48,7 @@ void CreateClassifiedFiles::createClassified() const {
 
 }
 
-int main() {
-
-    CreateClassifiedFiles createClassifiedFiles = CreateClassifiedFiles(5);
-
-
+int main(int argc, char *argv[]) {
+    CreateClassifiedFiles createClassifiedFiles = CreateClassifiedFiles(stoi(argv[1]));
     createClassifiedFiles.createClassified();
-
 }

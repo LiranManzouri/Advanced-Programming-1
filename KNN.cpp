@@ -1,4 +1,4 @@
-#include <KNN.h>
+#include "KNN.h"
 
 using namespace std;
 
@@ -17,8 +17,6 @@ int KNN::partition(pair<Flower *, double> *arr, int left, int right, int pivot) 
 }
 
 void KNN::QuickSelect(int k, pair<Flower *, double> *arr, int left, int right) {
-    cout << "here4" << endl;
-
     if (left == right) {
         return;
     }

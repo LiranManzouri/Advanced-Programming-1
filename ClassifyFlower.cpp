@@ -65,8 +65,9 @@ string ClassifyFlower::classifyByKNN(pair<Flower *, double> *distances) const {
         if (distances[i].first->getFlowerType() == "Iris-virginica") {
             counterForIrisVirginica++;
         }
-        cout << *distances[i].first << " and the distance is: " << distances[i].second << endl;
     }
+
+    delete[] distances;
 
     int maxCounter = counterForIrisSetosa;
     maxCounter = max(maxCounter, counterForIrisVersicolor);
