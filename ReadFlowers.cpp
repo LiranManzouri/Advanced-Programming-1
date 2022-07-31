@@ -14,8 +14,8 @@ void ReadFlowers::readAndSaveFlowers() {
     ifstream flowersInputFile;
     flowersInputFile.open(fileName);
     if (!flowersInputFile) {
-        cout << "No such file!" << endl;
-        return;
+        cerr << "Error: file couldn't be opened" << endl;
+        exit(1);
     }
     string line;
     const char delim = ',';
