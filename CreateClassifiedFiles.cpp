@@ -13,28 +13,28 @@ using namespace std;
 void CreateClassifiedFiles::createClassified() const {
 
     ofstream classifyByEuclideanFile;
-    classifyByEuclideanFile.open("../euclidean_output.csv");
+    classifyByEuclideanFile.open("euclidean_output.csv");
     if (!classifyByEuclideanFile) {
         cerr << "Error: file couldn't be opened" << endl;
         exit(1);
     }
 
     ofstream classifyByChebyshevFile;
-    classifyByChebyshevFile.open("../chebyshev_output.csv");
+    classifyByChebyshevFile.open("chebyshev_output.csv");
     if (!classifyByChebyshevFile) {
         cerr << "Error: file couldn't be opened" << endl;
         exit(1);
     }
 
     ofstream classifyByManhattanFile;
-    classifyByManhattanFile.open("../manhattan_output.csv");
+    classifyByManhattanFile.open("manhattan_output.csv");
     if (!classifyByManhattanFile) {
         cerr << "Error: file couldn't be opened" << endl;
         exit(1);
     }
 
-    ReadFlowers classifiedReader = ReadFlowers("../classified.csv");
-    ReadFlowers unclassifiedReader = ReadFlowers("../Unclassified.csv");
+    ReadFlowers classifiedReader = ReadFlowers("classified.csv");
+    ReadFlowers unclassifiedReader = ReadFlowers("Unclassified.csv");
 
     classifiedReader.readAndSaveFlowers();
     unclassifiedReader.readAndSaveFlowers();
