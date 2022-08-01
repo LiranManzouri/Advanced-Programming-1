@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
         cout << "You must enter a number for calculating the K-N-N!" << endl;
         return 0;
     }
+    // takes the argument for the k in the algo , and kickstarts the program
     CreateClassifiedFiles createClassifiedFiles = CreateClassifiedFiles(stoi(argv[1]));
     createClassifiedFiles.createClassified();
 }

@@ -14,17 +14,19 @@ public:
         flowers = nullptr;
     }
 
+    //deconstructor for the flowers arr
     ~ReadFlowers() {
         delete[] flowers;
     }
-
 
     Flower *getFlowers() {
         return flowers;
     }
 
+    //gets the number of flowers in the file by going line by line
     int getNumOfFlowers();
 
+    //reads the flowers from the files and saves them in a locel varible "flowers[]"
     void readAndSaveFlowers();
 };
 
