@@ -43,5 +43,7 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "docwriter.style": "Google",
+    "docwriter.progress.trackFunctions": false
 }

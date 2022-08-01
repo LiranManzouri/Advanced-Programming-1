@@ -54,6 +54,8 @@ string ClassifyFlower::manhattanClassify() {
     return classifyByKNN(manhattanDistances);
 }
 
+// runs the KNN algo on the array of pairs, then looks at the k first
+// elements and classfy the flower by them
 string ClassifyFlower::classifyByKNN(pair<Flower *, double> *distances) const {
     int counterForIrisSetosa = 0;
     int counterForIrisVersicolor = 0;

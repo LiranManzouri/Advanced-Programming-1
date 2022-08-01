@@ -13,6 +13,8 @@ public:
 
     explicit CreateClassifiedFiles(int k) : k(k) {}
 
+    // creates the output files for the classifier to write in
+    // and write the classified info to the files
     void createClassified() const;
 
 };

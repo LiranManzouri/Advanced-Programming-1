@@ -10,8 +10,13 @@
 
 using namespace std;
 
+/**
+ * It reads the classified and unclassified flowers, and then
+ * classifies the unclassified flowers by the three methods, and writes the results to the files
+ */
 void CreateClassifiedFiles::createClassified() const {
 
+    //opens all the files, and makes sure there are no errors
     ofstream classifyByEuclideanFile;
     classifyByEuclideanFile.open("euclidean_output.csv");
     if (!classifyByEuclideanFile) {
@@ -33,6 +38,7 @@ void CreateClassifiedFiles::createClassified() const {
         exit(1);
     }
 
+    //reads the flowers
     ReadFlowers classifiedReader = ReadFlowers("classified.csv");
     ReadFlowers unclassifiedReader = ReadFlowers("Unclassified.csv");
 
@@ -42,6 +48,7 @@ void CreateClassifiedFiles::createClassified() const {
     Flower *classifiedFlowers = classifiedReader.getFlowers();
     int numOfClassifiedFlowers = classifiedReader.getNumOfFlowers();
 
+    //writes the classified info to the files
     for (int i = 0; i < unclassifiedReader.getNumOfFlowers(); i++) {
         const Flower unclassifiedFlower = unclassifiedReader.getFlowers()[i];
         ClassifyFlower classifyFlower = ClassifyFlower(unclassifiedFlower, classifiedFlowers,
