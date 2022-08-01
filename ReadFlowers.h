@@ -14,7 +14,7 @@ public:
         flowers = nullptr;
     }
 
-    //deconstructor for the flowers arr
+    //destructor for the flowers arr
     ~ReadFlowers() {
         delete[] flowers;
     }
